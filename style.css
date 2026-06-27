@@ -1,0 +1,61 @@
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#080808;color:#fff;font-family:Poppins}
+#loader{
+position:fixed;inset:0;background:#050505;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+z-index:999;transition:1s}
+#loader img{width:180px;animation:spin 4s linear infinite}
+.hidden{opacity:0;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+nav{
+position:fixed;width:100%;padding:18px 8%;
+display:flex;justify-content:space-between;
+background:rgba(0,0,0,.45);backdrop-filter:blur(10px);z-index:50}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:48px}
+.menu a{color:white;text-decoration:none;margin-left:18px}
+.hero{
+height:100vh;background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+url(community.jpg) center/cover fixed;
+display:flex;justify-content:center;align-items:center;text-align:center}
+.hero-logo{width:min(35vw,260px)}
+.hero h1{font-size:min(9vw,100px);font-family:Bebas Neue}
+.btn{
+display:inline-block;margin-top:24px;
+padding:16px 42px;
+border:1px solid #7a1f1f;border-radius:999px;
+color:#fff;text-decoration:none}
+.btn:hover{background:#7a1f1f}
+section{padding:130px 8%}
+h2{
+font-family:Bebas Neue;
+font-size:70px;
+margin-bottom:35px;
+color:#b89b6a}
+.timeline,.members,.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px}
+.box,.role,.stats div{
+height:220px;background:#111;border-radius:26px;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+transition:.35s;border:1px solid #202020}
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px}
+.gallery img{
+height:340px;width:100%;object-fit:cover;
+border-radius:26px}
+.box:hover,.role:hover,.stats div:hover{
+transform:translateY(-10px);
+border-color:#7a1f1f}
+.stats b{
+font-size:56px;color:#b89b6a}
+footer{
+padding:80px;text-align:center;border-top:1px solid #181818}
+footer img{width:120px}
