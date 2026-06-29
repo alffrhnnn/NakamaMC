@@ -1,19 +1,27 @@
+/* LOADER */
+
 setTimeout(() => {
 
-    document
-        .getElementById("loader")
-        .classList
-        .add("hidden")
+    const loader =
+        document.getElementById("loader")
+
+    if (loader) {
+
+        loader.classList.add("hidden")
+
+    }
 
 }, 2500)
 
 
 
+/* CARD POPUP EFFECT */
+
 document
 
     .querySelectorAll(
 
-        ".box,.role,.social-card"
+        ".box,.role,.social-card,.stats div"
 
     )
 
@@ -35,14 +43,17 @@ document
                     (e.clientY - r.top - r.height / 2) / 18
 
                 card.style.transform =
-                    `
+
+                    `perspective(1000px)
 rotateX(${-y}deg)
 rotateY(${x}deg)
-`
+translateY(-8px)`
 
             }
 
         )
+
+
 
         card.addEventListener(
 
@@ -50,27 +61,38 @@ rotateY(${x}deg)
 
             () => {
 
-                card.style.transform = ""
+                card.style.transform =
+
+                    "perspective(1000px) rotateX(0) rotateY(0) translateY(0)"
 
             }
 
         )
 
     })
-    /* BURGER MENU */
+
+
+
+/* BURGER MENU */
 
 const burger =
-document.getElementById("burger")
+    document.getElementById("burger")
 
 const menu =
-document.getElementById("menu")
+    document.getElementById("menu")
 
-if (burger && menu){
+if (burger && menu) {
 
-burger.addEventListener("click",()=>{
+    burger.addEventListener(
 
-menu.classList.toggle("active")
+        "click",
 
-})
+        () => {
+
+            menu.classList.toggle("active")
+
+        }
+
+    )
 
 }
